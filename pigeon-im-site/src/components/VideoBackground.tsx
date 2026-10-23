@@ -1,6 +1,6 @@
 export function VideoBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#0b1224]" aria-hidden>
+    <div className="fixed inset-0 overflow-hidden bg-[#0b1224]" aria-hidden>
       <video
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay

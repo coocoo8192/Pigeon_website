@@ -1,53 +1,27 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Footer } from './components/Footer'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { PlatformBar } from './components/PlatformBar'
-import { VideoBackground } from './components/VideoBackground'
-import {
-  detectDefaultPlatform,
-  platforms,
-  type PlatformId,
-} from './data/platforms'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { AboutPage } from './pages/AboutPage'
+import { DeleteAccountPage } from './pages/DeleteAccountPage'
+import { FeaturesPage } from './pages/FeaturesPage'
+import { HomePage } from './pages/HomePage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { TermsPage } from './pages/TermsPage'
 
 function App() {
-  const [activeId, setActiveId] = useState<PlatformId>('windows')
-  const [showQr, setShowQr] = useState(false)
-
-  useEffect(() => {
-    setActiveId(detectDefaultPlatform())
-  }, [])
-
-  const platform = useMemo(
-    () => platforms.find((p) => p.id === activeId) ?? platforms[0],
-    [activeId],
-  )
-
-  function selectPlatform(id: PlatformId) {
-    setActiveId(id)
-    setShowQr(false)
-  }
-
   return (
-    <div className="relative min-h-full overflow-hidden">
-      <VideoBackground />
-      <div className="relative flex min-h-full flex-col">
-        <Header onSelectPlatform={selectPlatform} />
-        <main className="flex-1">
-          <Hero
-            platform={platform}
-            showQr={showQr}
-            onToggleQr={() => setShowQr((v) => !v)}
-          />
-        </main>
-        <PlatformBar
-          platforms={platforms}
-          activeId={activeId}
-          onSelect={selectPlatform}
-        />
-        <Footer />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="features" element={<FeaturesPage />} />
+          <Route path="privacy" element={<PrivacyPage />} />
+          <Route path="terms" element={<TermsPage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="delete-account" element={<DeleteAccountPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
