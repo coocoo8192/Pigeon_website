@@ -52,22 +52,17 @@ body {
 }
 
 .nav-link {
-  color: #fff;
-  font-weight: 600;
-  mix-blend-mode: difference;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.35);
+  color: #12203a;
+  font-weight: 650;
 }
 
 .nav-link:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12);
+  color: #0a1628;
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .nav-link-active {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 1.5px;
+  color: #0b5fff;
 }
 
 .glass-btn {
