@@ -11,7 +11,7 @@ export function PlatformBar({ platforms, activeId, onSelect }: PlatformBarProps)
   return (
     <div className="fixed bottom-20 left-0 right-0 z-40 flex justify-center px-4">
       <div
-        className="glass flex flex-wrap items-center justify-center gap-2 rounded-2xl px-3 py-2.5 sm:gap-3 sm:px-4"
+        className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
         role="tablist"
         aria-label="选择下载平台"
       >
