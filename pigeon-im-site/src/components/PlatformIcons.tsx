@@ -5,6 +5,7 @@ const className = 'h-6 w-6'
 export function PlatformIcon({ id }: { id: PlatformId }) {
   switch (id) {
     case 'ios':
+    case 'macos':
     case 'testflight':
       return (
         <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>

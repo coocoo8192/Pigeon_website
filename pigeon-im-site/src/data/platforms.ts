@@ -1,4 +1,4 @@
-export type PlatformId = 'ios' | 'testflight' | 'apk' | 'google' | 'windows'
+export type PlatformId = 'ios' | 'macos' | 'testflight' | 'apk' | 'google' | 'windows'
 
 export interface PlatformInfo {
   id: PlatformId
@@ -25,6 +25,17 @@ export const platforms: PlatformInfo[] = [
     downloadUrl: 'https://apps.apple.com/app/pigeonnest-messenger/id6755805769',
     qrHint: '扫码前往 App Store',
     updateNotes: ['端到端加密聊天', '钱包与即时通讯合一'],
+  },
+  {
+    id: 'macos',
+    label: 'Mac',
+    shortLabel: 'Mac',
+    version: 'App Store',
+    releaseDate: 'Pigeon Nest',
+    downloadLabel: 'Mac Download',
+    downloadUrl: 'https://apps.apple.com/app/pigeonnest-messenger/id6755805769',
+    qrHint: '扫码前往 App Store',
+    updateNotes: ['与 iOS 同一 App Store 下载地址'],
   },
   {
     id: 'testflight',
@@ -78,7 +89,7 @@ export function detectDefaultPlatform(): PlatformId {
 
   if (ua.includes('iphone') || ua.includes('ipad')) return 'ios'
   if (ua.includes('android')) return 'google'
-  if (ua.includes('mac') || platform.includes('mac')) return 'testflight'
+  if (ua.includes('mac') || platform.includes('mac')) return 'macos'
   if (ua.includes('win')) return 'windows'
   return 'windows'
 }
