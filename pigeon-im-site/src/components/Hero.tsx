@@ -6,7 +6,7 @@ interface HeroProps {
   onToggleQr: () => void
 }
 
-const QR_PLATFORMS = new Set(['ios', 'macos', 'testflight', 'apk', 'google'])
+const QR_PLATFORMS = new Set(['ios', 'macos', 'apk', 'google'])
 
 export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
   const canShowQr = QR_PLATFORMS.has(platform.id)

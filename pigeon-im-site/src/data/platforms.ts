@@ -1,4 +1,4 @@
-export type PlatformId = 'ios' | 'macos' | 'testflight' | 'apk' | 'google' | 'windows'
+export type PlatformId = 'ios' | 'macos' | 'apk' | 'google' | 'windows'
 
 export interface PlatformInfo {
   id: PlatformId
@@ -36,18 +36,6 @@ export const platforms: PlatformInfo[] = [
     downloadUrl: 'https://apps.apple.com/app/pigeonnest-messenger/id6755805769',
     qrHint: '扫码前往 App Store',
     updateNotes: ['与 iOS 同一 App Store 下载地址'],
-  },
-  {
-    id: 'testflight',
-    label: 'iOS / Mac (TF)',
-    shortLabel: 'TF',
-    version: 'TestFlight',
-    releaseDate: 'Beta',
-    downloadLabel: 'iOS / Mac (TF) Download',
-    downloadUrl: 'https://testflight.apple.com/join/aNMhmMDn',
-    qrHint: '扫码加入 TestFlight',
-    beta: true,
-    updateNotes: ['iOS 与 Mac 测试通道', '抢先体验新功能'],
   },
   {
     id: 'apk',
