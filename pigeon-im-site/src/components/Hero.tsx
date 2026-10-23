@@ -56,7 +56,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
               href={platform.downloadUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="glass-btn inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold"
+              className="glass-btn-strong inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold"
               onClick={(e) => {
                 if (canShowQr) {
                   e.preventDefault()
