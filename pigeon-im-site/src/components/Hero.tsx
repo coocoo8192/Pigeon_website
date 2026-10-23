@@ -6,29 +6,45 @@ interface HeroProps {
   onToggleQr: () => void
 }
 
+const QR_PLATFORMS = new Set(['ios', 'testflight', 'apk', 'google'])
+
 export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
-  const isMobile = platform.id === 'ios' || platform.id === 'android'
+  const canShowQr = QR_PLATFORMS.has(platform.id)
 
   return (
     <section className="relative flex min-h-full flex-col items-center justify-center px-4 pb-36 pt-20 text-center">
       <div className="animate-fade-up max-w-3xl">
         <p className="mb-3 text-sm font-medium tracking-[0.35em] text-white/70 uppercase">
-          Pigeon 即时通讯
+          Pigeon Nest
         </p>
         <h1 className="mb-2 text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-6xl">
           轻松做自己
         </h1>
         <p className="mb-10 text-lg text-white/85 sm:text-xl">
-          连接你我，记录生活里的每一个瞬间
+          Encrypted chat, Digital wallet, in one app
         </p>
 
-        {isMobile && showQr ? (
+        {canShowQr && showQr ? (
           <div className="mx-auto inline-flex flex-col items-center gap-3 rounded-2xl bg-white/95 p-6 shadow-xl">
-            <QrPlaceholder />
+            <img
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=168x168&data=${encodeURIComponent(platform.downloadUrl)}`}
+              alt=""
+              width={168}
+              height={168}
+              className="rounded-lg"
+            />
             <p className="text-sm text-[#555]">{platform.qrHint}</p>
+            <a
+              href={platform.downloadUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm text-[#1677ff] hover:underline"
+            >
+              直接打开下载
+            </a>
             <button
               type="button"
-              className="text-sm text-[#1677ff] hover:underline"
+              className="text-sm text-[#888] hover:underline"
               onClick={onToggleQr}
             >
               关闭
@@ -38,9 +54,11 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
           <>
             <a
               href={platform.downloadUrl}
+              target="_blank"
+              rel="noreferrer noopener"
               className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-[#1a1a2e] shadow-lg transition hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
               onClick={(e) => {
-                if (isMobile) {
+                if (canShowQr) {
                   e.preventDefault()
                   onToggleQr()
                 }
@@ -50,7 +68,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
               {platform.downloadLabel}
             </a>
             <p className="mt-4 text-sm text-white/75">
-              v {platform.version} · {platform.releaseDate}
+              {platform.version} · {platform.releaseDate}
             </p>
           </>
         )}
@@ -66,23 +84,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
                 <li key={note}>{note}</li>
               ))}
             </ul>
-            <a href="#" className="mt-2 inline-block text-[#a8d4ff] hover:underline">
-              更多日志 &gt;
-            </a>
           </div>
-        )}
-
-        {platform.altDownloads && platform.altDownloads.length > 0 && !showQr && (
-          <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-white/80">
-            {platform.altDownloads.map((alt, i) => (
-              <span key={alt.label} className="inline-flex items-center">
-                {i > 0 && <span className="mr-3 text-white/40">|</span>}
-                <a href={alt.url} className="hover:text-white hover:underline">
-                  {alt.label}
-                </a>
-              </span>
-            ))}
-          </p>
         )}
       </div>
     </section>
@@ -94,36 +96,5 @@ function DownloadIcon() {
     <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 21h16" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  )
-}
-
-function QrPlaceholder() {
-  const cells = 11
-  const pattern = [
-    [1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1],
-    [1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1],
-    [1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1],
-    [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-    [1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1],
-    [0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0],
-    [1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1],
-    [0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0],
-    [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1],
-  ]
-  return (
-    <div
-      className="grid gap-0.5 rounded-lg border border-[#eee] bg-white p-3"
-      style={{ gridTemplateColumns: `repeat(${cells}, 1fr)` }}
-      aria-hidden
-    >
-      {pattern.flat().map((on, i) => (
-        <div
-          key={i}
-          className={`h-2.5 w-2.5 rounded-sm ${on ? 'bg-[#1a1a2e]' : 'bg-transparent'}`}
-        />
-      ))}
-    </div>
   )
 }

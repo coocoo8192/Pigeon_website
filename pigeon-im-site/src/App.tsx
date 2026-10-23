@@ -3,6 +3,7 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { PlatformBar } from './components/PlatformBar'
+import { VideoBackground } from './components/VideoBackground'
 import {
   detectDefaultPlatform,
   platforms,
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div className="relative min-h-full overflow-hidden">
-      <div className="gradient-bg gradient-stripes absolute inset-0" aria-hidden />
+      <VideoBackground />
       <div className="relative flex min-h-full flex-col">
         <Header onSelectPlatform={selectPlatform} />
         <main className="flex-1">

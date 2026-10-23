@@ -1,10 +1,4 @@
-export type PlatformId =
-  | 'ios'
-  | 'android'
-  | 'macos'
-  | 'windows'
-  | 'linux'
-  | 'harmonyos'
+export type PlatformId = 'ios' | 'testflight' | 'apk' | 'google' | 'windows'
 
 export interface PlatformInfo {
   id: PlatformId
@@ -25,78 +19,56 @@ export const platforms: PlatformInfo[] = [
     id: 'ios',
     label: 'iOS',
     shortLabel: 'iOS',
-    version: '9.2.1',
-    releaseDate: '2026-09-20',
-    downloadLabel: 'App Store 下载',
-    downloadUrl: '#',
-    qrHint: '扫码获取 · App Store 下载',
-    updateNotes: ['消息已读状态更清晰', '群相册支持批量保存'],
+    version: 'App Store',
+    releaseDate: 'Pigeon Nest',
+    downloadLabel: 'iOS Download',
+    downloadUrl: 'https://apps.apple.com/app/pigeonnest-messenger/id6755805769',
+    qrHint: '扫码前往 App Store',
+    updateNotes: ['端到端加密聊天', '钱包与即时通讯合一'],
   },
   {
-    id: 'android',
-    label: 'Android',
-    shortLabel: 'Android',
-    version: '9.2.1',
-    releaseDate: '2026-09-20',
-    downloadLabel: 'Android 版下载',
-    downloadUrl: '#',
-    qrHint: '扫码获取 · 应用商店下载',
-    updateNotes: ['深色模式跟随系统', '语音消息支持转文字'],
+    id: 'testflight',
+    label: 'iOS / Mac (TF)',
+    shortLabel: 'TF',
+    version: 'TestFlight',
+    releaseDate: 'Beta',
+    downloadLabel: 'iOS / Mac (TF) Download',
+    downloadUrl: 'https://testflight.apple.com/join/aNMhmMDn',
+    qrHint: '扫码加入 TestFlight',
+    beta: true,
+    updateNotes: ['iOS 与 Mac 测试通道', '抢先体验新功能'],
   },
   {
-    id: 'macos',
-    label: 'macOS',
-    shortLabel: 'macOS',
-    version: '6.9.88',
-    releaseDate: '2026-09-22',
-    downloadLabel: 'macOS 版下载',
-    downloadUrl: '#',
-    updateNotes: ['支持 Apple Silicon 与 Intel', '截图标注工具升级'],
+    id: 'apk',
+    label: 'Android APK',
+    shortLabel: 'APK',
+    version: '1.0.28',
+    releaseDate: '82_release',
+    downloadLabel: 'APK Download',
+    downloadUrl: 'https://s3.mechat.pro/setup/apk/pigeon1.0.28_82_release.apk',
+    qrHint: '扫码下载 Android APK',
+    updateNotes: ['直接安装 Android 安装包'],
+  },
+  {
+    id: 'google',
+    label: 'Google Play',
+    shortLabel: 'Google',
+    version: 'Play Store',
+    releaseDate: 'Android',
+    downloadLabel: 'Google Download',
+    downloadUrl: 'https://play.google.com/store/apps/details?id=com.gt.pigeon.android',
+    qrHint: '扫码前往 Google Play',
+    updateNotes: ['从 Google Play 安装'],
   },
   {
     id: 'windows',
     label: 'Windows',
     shortLabel: 'Windows',
-    version: '9.9.36 (64位)',
-    releaseDate: '2026-09-24',
-    downloadLabel: 'Windows 64 位版下载',
-    downloadUrl: '#',
-    altDownloads: [
-      { label: '32 位版本下载', url: '#' },
-      { label: 'ARM 版本下载', url: '#' },
-      { label: '往期怀旧版下载', url: '#' },
-    ],
-    updateNotes: [
-      '快捷键自定义更全面',
-      '撤回消息时间延长至 3 分钟',
-      '文件传输进度条优化',
-    ],
-  },
-  {
-    id: 'linux',
-    label: 'Linux',
-    shortLabel: 'Linux',
-    version: '3.2.34',
-    releaseDate: '2026-09-24',
-    downloadLabel: 'Linux 版下载',
-    downloadUrl: '#',
-    altDownloads: [
-      { label: 'AppImage', url: '#' },
-      { label: 'deb 包', url: '#' },
-      { label: 'rpm 包', url: '#' },
-    ],
-    updateNotes: ['Wayland 会话稳定性提升', '托盘图标主题适配'],
-  },
-  {
-    id: 'harmonyos',
-    label: 'HarmonyOS',
-    shortLabel: 'HarmonyOS',
-    version: '2.1.0-beta',
-    releaseDate: '2026-08-15',
-    downloadLabel: 'HarmonyOS 版下载',
-    downloadUrl: '#',
-    beta: true,
-    updateNotes: ['鸿蒙原子化卡片预览', '跨设备接续聊天'],
+    version: '1.0.27',
+    releaseDate: 'Setup',
+    downloadLabel: 'Windows Download',
+    downloadUrl: 'https://s3.mechat.pro/setup/win/PigeonChat_Setup_1.0.27.exe',
+    updateNotes: ['Windows 桌面安装包'],
   },
 ]
 
@@ -104,11 +76,9 @@ export function detectDefaultPlatform(): PlatformId {
   const ua = navigator.userAgent.toLowerCase()
   const platform = navigator.platform?.toLowerCase() ?? ''
 
-  if (ua.includes('harmonyos') || ua.includes('openharmony')) return 'harmonyos'
   if (ua.includes('iphone') || ua.includes('ipad')) return 'ios'
-  if (ua.includes('android')) return 'android'
-  if (ua.includes('mac') || platform.includes('mac')) return 'macos'
-  if (ua.includes('linux')) return 'linux'
+  if (ua.includes('android')) return 'google'
+  if (ua.includes('mac') || platform.includes('mac')) return 'testflight'
   if (ua.includes('win')) return 'windows'
   return 'windows'
 }
