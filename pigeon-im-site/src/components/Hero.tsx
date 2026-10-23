@@ -76,7 +76,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
         {platform.updateNotes && platform.updateNotes.length > 0 && !showQr && (
           <div
             id="changelog"
-            className="glass mx-auto mt-10 max-w-md rounded-2xl px-5 py-4 text-left text-sm text-white/90"
+            className="mx-auto mt-10 max-w-md px-5 py-1 text-left text-sm text-white/90"
           >
             <p className="mb-2 font-medium text-white">本次更新</p>
             <ul className="list-inside list-disc space-y-1 text-white/85">
