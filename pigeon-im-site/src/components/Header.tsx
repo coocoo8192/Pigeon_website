@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navItems } from '../data/nav'
-import { useNavContrast } from '../hooks/useNavContrast'
 
 export function Header() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
-  const contrast = useNavContrast()
 
   useEffect(() => {
     setOpen(false)
@@ -14,14 +12,14 @@ export function Header() {
 
   return (
     <header className="relative z-50 w-full px-3 pt-3 sm:px-5">
-      <nav className={`glass-nav nav-${contrast} mx-auto flex h-[68px] max-w-6xl items-center justify-between rounded-2xl px-4 sm:px-6`}>
+      <nav className="glass-nav mx-auto flex h-[68px] max-w-6xl items-center justify-between rounded-2xl px-4 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center gap-3">
           <img
             src="/logo.png"
             alt="PigeonNest"
             className="h-12 w-12 rounded-xl object-contain sm:h-14 sm:w-14"
           />
-          <span className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+          <span className="text-xl font-semibold tracking-tight text-[#3a3a3a] sm:text-2xl">
             PigeonNest
           </span>
         </Link>
@@ -38,7 +36,7 @@ export function Header() {
 
         <button
           type="button"
-          className="nav-menu-btn rounded-md p-2 xl:hidden"
+          className="rounded-md p-2 text-[#3a3a3a] xl:hidden"
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -54,7 +52,7 @@ export function Header() {
       </nav>
 
       {open && (
-        <div className={`glass-nav nav-${contrast} absolute left-3 right-3 top-[80px] z-50 mx-auto max-w-6xl rounded-2xl p-2 sm:left-5 sm:right-5 xl:hidden`}>
+        <div className="glass-nav absolute left-3 right-3 top-[80px] z-50 mx-auto max-w-6xl rounded-2xl p-2 sm:left-5 sm:right-5 xl:hidden">
           <ul className="flex flex-col text-sm">
             {navItems.map((item) => (
               <li key={item.label}>
