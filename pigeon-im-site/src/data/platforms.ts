@@ -23,8 +23,8 @@ export const platforms: PlatformInfo[] = [
     releaseDate: 'PigeonNest',
     downloadLabel: 'iOS Download',
     downloadUrl: 'https://apps.apple.com/app/pigeonnest-messenger/id6755805769',
-    qrHint: '扫码前往 App Store',
-    updateNotes: ['端到端加密聊天', '钱包与即时通讯合一'],
+    qrHint: 'Scan to open the App Store',
+    updateNotes: ['End-to-end encrypted chat', 'Wallet and messenger in one app'],
   },
   {
     id: 'macos',
@@ -34,8 +34,8 @@ export const platforms: PlatformInfo[] = [
     releaseDate: 'PigeonNest',
     downloadLabel: 'Mac Download',
     downloadUrl: 'https://apps.apple.com/app/pigeonnest-messenger/id6755805769',
-    qrHint: '扫码前往 App Store',
-    updateNotes: ['与 iOS 同一 App Store 下载地址'],
+    qrHint: 'Scan to open the App Store',
+    updateNotes: ['Same App Store link as iOS'],
   },
   {
     id: 'apk',
@@ -45,8 +45,8 @@ export const platforms: PlatformInfo[] = [
     releaseDate: '82_release',
     downloadLabel: 'APK Download',
     downloadUrl: 'https://s3.mechat.pro/setup/apk/pigeon1.0.28_82_release.apk',
-    qrHint: '扫码下载 Android APK',
-    updateNotes: ['直接安装 Android 安装包'],
+    qrHint: 'Scan to download the Android APK',
+    updateNotes: ['Install the Android package directly'],
   },
   {
     id: 'google',
@@ -56,8 +56,8 @@ export const platforms: PlatformInfo[] = [
     releaseDate: 'Android',
     downloadLabel: 'Google Download',
     downloadUrl: 'https://play.google.com/store/apps/details?id=com.gt.pigeon.android',
-    qrHint: '扫码前往 Google Play',
-    updateNotes: ['从 Google Play 安装'],
+    qrHint: 'Scan to open Google Play',
+    updateNotes: ['Install from Google Play'],
   },
   {
     id: 'windows',
@@ -67,7 +67,7 @@ export const platforms: PlatformInfo[] = [
     releaseDate: 'Setup',
     downloadLabel: 'Windows Download',
     downloadUrl: 'https://s3.mechat.pro/setup/win/PigeonChat_Setup_1.0.27.exe',
-    updateNotes: ['Windows 桌面安装包'],
+    updateNotes: ['Windows desktop installer'],
   },
 ]
 

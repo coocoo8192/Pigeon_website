@@ -13,7 +13,7 @@ export function PlatformBar({ platforms, activeId, onSelect }: PlatformBarProps)
       <div
         className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
         role="tablist"
-        aria-label="选择下载平台"
+        aria-label="Choose download platform"
       >
         {platforms.map((p) => {
           const active = p.id === activeId

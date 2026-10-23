@@ -20,8 +20,8 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
           <p className="mb-2 text-xs font-medium tracking-[0.35em] text-white/70 uppercase sm:mb-3 sm:text-sm">
             PigeonNest
           </p>
-          <h1 className="mb-2 text-3xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-6xl">
-            轻松做自己
+          <h1 className="mb-2 text-3xl font-bold tracking-tight text-white drop-shadow-sm sm:text-4xl md:text-5xl">
+            Here, Privacy and payment meet.
           </h1>
           <p className="mb-6 text-base text-white/85 sm:mb-8 sm:text-xl">
             Encrypted chat, Digital wallet, in one app
@@ -64,21 +64,21 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
                 rel="noreferrer noopener"
                 className="glass-btn rounded-xl px-3 py-1.5 text-sm"
               >
-                直接打开下载
+                Open download
               </a>
               <button
                 type="button"
                 className="glass-btn rounded-xl px-3 py-1.5 text-sm"
                 onClick={onToggleQr}
               >
-                关闭
+                Close
               </button>
             </div>
           ) : (
             platform.updateNotes &&
             platform.updateNotes.length > 0 && (
               <div id="changelog" className="w-full px-5 py-1 text-left text-sm text-white/90">
-                <p className="mb-2 font-medium text-white">本次更新</p>
+                <p className="mb-2 font-medium text-white">What’s new</p>
                 <ul className="list-inside list-disc space-y-1 text-white/85">
                   {platform.updateNotes.map((note) => (
                     <li key={note}>{note}</li>

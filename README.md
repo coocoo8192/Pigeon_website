@@ -1,8 +1,8 @@
 # Pigeon_website
 
-参考 [QQ 即时通讯官网](https://im.qq.com/index/#/) 布局与交互的演示落地页（原创品牌 **Pigeon**，非官方仿站）。
+PigeonNest landing site: encrypted chat and a digital wallet in one app.
 
-## 本地运行
+## Run locally
 
 ```bash
 cd pigeon-im-site
@@ -10,18 +10,17 @@ npm install
 npm run dev
 ```
 
-浏览器打开终端提示的本地地址（默认 `http://localhost:5173`）。
+Open the local URL printed in the terminal (default `http://localhost:5173`).
 
-## 功能概览
+## Features
 
-- 全屏背景视频（与 [Pigeon Nest](https://coocoo8192.wixsite.com/my-site-3) 官网同源）
-- 固定顶栏：产品下载 / 账号服务下拉菜单
-- 居中主标语「轻松做自己」与平台下载按钮
-- 顶部菜单对齐 [PigeonNest 官网](https://coocoo8192.wixsite.com/my-site-3)：Home、Features、Privacy Policy、Terms of Service、About Us、Contact、Delete Account
-- 底部平台切换：iOS、Mac（与 iOS 同 App Store 地址）、APK、Google Play、Windows
-- 根据当前系统自动预选下载平台
+- Full-screen background video from the [PigeonNest site](https://coocoo8192.wixsite.com/my-site-3)
+- Top nav: Home, Features, Privacy Policy, Terms of Service, About Us, Contact, Delete Account
+- Hero headline: “Here, Privacy and payment meet.”
+- Platform downloads: iOS, Mac (same App Store URL as iOS), APK, Google Play, Windows
+- Default download platform follows the current system
 
-## 技术栈
+## Stack
 
 - Vite + React + TypeScript
 - Tailwind CSS v4
