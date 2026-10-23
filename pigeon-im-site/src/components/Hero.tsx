@@ -25,26 +25,26 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
         </p>
 
         {canShowQr && showQr ? (
-          <div className="mx-auto inline-flex flex-col items-center gap-3 rounded-2xl bg-white/95 p-6 shadow-xl">
+          <div className="glass mx-auto inline-flex flex-col items-center gap-3 rounded-2xl p-6">
             <img
               src={`https://api.qrserver.com/v1/create-qr-code/?size=168x168&data=${encodeURIComponent(platform.downloadUrl)}`}
               alt=""
               width={168}
               height={168}
-              className="rounded-lg"
+              className="rounded-lg bg-white p-1"
             />
-            <p className="text-sm text-[#555]">{platform.qrHint}</p>
+            <p className="text-sm text-white/85">{platform.qrHint}</p>
             <a
               href={platform.downloadUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-sm text-[#1677ff] hover:underline"
+              className="glass-btn rounded-xl px-3 py-1.5 text-sm"
             >
               直接打开下载
             </a>
             <button
               type="button"
-              className="text-sm text-[#888] hover:underline"
+              className="glass-btn rounded-xl px-3 py-1.5 text-sm"
               onClick={onToggleQr}
             >
               关闭
@@ -56,7 +56,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
               href={platform.downloadUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-base font-semibold text-[#1a1a2e] shadow-lg transition hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
+              className="glass-btn inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold"
               onClick={(e) => {
                 if (canShowQr) {
                   e.preventDefault()
@@ -76,7 +76,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
         {platform.updateNotes && platform.updateNotes.length > 0 && !showQr && (
           <div
             id="changelog"
-            className="mx-auto mt-10 max-w-md rounded-xl bg-black/20 px-5 py-4 text-left text-sm text-white/90 backdrop-blur-sm"
+            className="glass mx-auto mt-10 max-w-md rounded-2xl px-5 py-4 text-left text-sm text-white/90"
           >
             <p className="mb-2 font-medium text-white">本次更新</p>
             <ul className="list-inside list-disc space-y-1 text-white/85">

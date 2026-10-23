@@ -36,31 +36,28 @@ export function Header({ onSelectPlatform }: HeaderProps) {
   }, [])
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-black/5 bg-white/95 shadow-sm backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full px-3 pt-3 sm:px-4">
       <nav
         ref={navRef}
-        className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6"
+        className="glass mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl px-4 sm:px-6"
       >
         <a href="#" className="flex items-center gap-2.5">
           <img src="/logo.png" alt="PigeonNest" className="h-9 w-9 rounded-md object-contain" />
-          <span className="text-lg font-semibold tracking-tight text-[#1a1a2e]">
+          <span className="text-lg font-semibold tracking-tight text-white">
             PigeonNest
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 text-sm font-medium text-[#333] md:flex">
+        <ul className="hidden items-center gap-1.5 text-sm font-medium text-white/90 md:flex">
           <li>
-            <a
-              href="#"
-              className="rounded-md px-3 py-2 text-[#1677ff] hover:bg-[#1677ff]/5"
-            >
+            <a href="#" className="glass-btn glass-btn-active rounded-xl px-3 py-1.5">
               首页
             </a>
           </li>
           <li className="relative">
             <button
               type="button"
-              className="flex items-center gap-1 rounded-md px-3 py-2 hover:bg-black/5"
+              className={`glass-btn flex items-center gap-1 rounded-xl px-3 py-1.5 ${open === 'product' ? 'glass-btn-active' : ''}`}
               aria-expanded={open === 'product'}
               onClick={() => setOpen(open === 'product' ? null : 'product')}
             >
@@ -73,7 +70,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
                   <button
                     key={item.id}
                     type="button"
-                    className="flex w-full items-center justify-between px-4 py-2.5 text-left hover:bg-[#f5f7fa]"
+                    className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-white/90 hover:bg-white/15"
                     onClick={() => {
                       onSelectPlatform?.(item.id)
                       setOpen(null)
@@ -81,7 +78,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
                   >
                     {item.label}
                     {item.beta && (
-                      <span className="rounded-full bg-[#1677ff]/10 px-2 py-0.5 text-xs text-[#1677ff]">
+                      <span className="rounded-full border border-white/30 bg-white/15 px-2 py-0.5 text-xs text-white">
                         Beta
                       </span>
                     )}
@@ -93,7 +90,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
           <li className="relative">
             <button
               type="button"
-              className="flex items-center gap-1 rounded-md px-3 py-2 hover:bg-black/5"
+              className={`glass-btn flex items-center gap-1 rounded-xl px-3 py-1.5 ${open === 'account' ? 'glass-btn-active' : ''}`}
               aria-expanded={open === 'account'}
               onClick={() => setOpen(open === 'account' ? null : 'account')}
             >
@@ -106,7 +103,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="block px-4 py-2.5 hover:bg-[#f5f7fa]"
+                    className="block rounded-lg px-3 py-2 text-white/90 hover:bg-white/15"
                   >
                     {item.label}
                   </a>
@@ -115,17 +112,17 @@ export function Header({ onSelectPlatform }: HeaderProps) {
             )}
           </li>
           <li>
-            <a href="#changelog" className="rounded-md px-3 py-2 hover:bg-black/5">
+            <a href="#changelog" className="glass-btn rounded-xl px-3 py-1.5">
               版本日志
             </a>
           </li>
           <li>
-            <a href="#stories" className="rounded-md px-3 py-2 hover:bg-black/5">
+            <a href="#stories" className="glass-btn rounded-xl px-3 py-1.5">
               Pigeon 故事
             </a>
           </li>
           <li>
-            <a href="#vip" className="rounded-md px-3 py-2 hover:bg-black/5">
+            <a href="#vip" className="glass-btn rounded-xl px-3 py-1.5">
               会员中心
             </a>
           </li>
@@ -133,7 +130,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
 
         <button
           type="button"
-          className="rounded-md p-2 text-[#333] md:hidden"
+          className="glass-btn rounded-xl p-2 md:hidden"
           aria-label="菜单"
           onClick={() => setOpen(open ? null : 'product')}
         >
@@ -148,7 +145,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
 
 function Chevron() {
   return (
-    <svg className="h-3.5 w-3.5 opacity-60" viewBox="0 0 12 12" fill="currentColor">
+    <svg className="h-3.5 w-3.5 opacity-70" viewBox="0 0 12 12" fill="currentColor">
       <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" fill="none" />
     </svg>
   )
@@ -163,7 +160,7 @@ function DropdownPanel({
 }) {
   return (
     <div
-      className={`absolute left-0 top-full mt-1 overflow-hidden rounded-lg border border-black/8 bg-white py-1 shadow-lg ${wide ? 'min-w-[200px]' : 'min-w-[140px]'}`}
+      className={`glass absolute left-0 top-full mt-2 rounded-2xl p-1 ${wide ? 'min-w-[200px]' : 'min-w-[160px]'}`}
     >
       {children}
     </div>
