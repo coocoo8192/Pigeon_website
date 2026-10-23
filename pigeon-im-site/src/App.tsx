@@ -20,7 +20,9 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="features" element={<FeaturesPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
+          <Route path="general-5" element={<PrivacyPage />} />
           <Route path="terms" element={<TermsPage />} />
+          <Route path="general-5-1" element={<TermsPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route
             path="delete-account"
