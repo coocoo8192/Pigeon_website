@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="relative z-50 w-full px-3 pt-3 sm:px-5">
-      <nav className="glass mx-auto flex h-[68px] max-w-6xl items-center justify-between rounded-2xl px-4 sm:px-6">
+      <nav className="glass-nav mx-auto flex h-[68px] max-w-6xl items-center justify-between rounded-2xl px-4 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center gap-3">
           <img
             src="/logo.png"
@@ -52,7 +52,7 @@ export function Header() {
       </nav>
 
       {open && (
-        <div className="glass absolute left-3 right-3 top-[80px] z-50 mx-auto max-w-6xl rounded-2xl p-2 sm:left-5 sm:right-5 xl:hidden">
+        <div className="glass-nav absolute left-3 right-3 top-[80px] z-50 mx-auto max-w-6xl rounded-2xl p-2 sm:left-5 sm:right-5 xl:hidden">
           <ul className="flex flex-col text-sm font-medium text-white/90">
             {navItems.map((item) => (
               <li key={item.label}>
