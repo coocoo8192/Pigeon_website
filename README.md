@@ -14,12 +14,11 @@ npm run dev
 
 ## 功能概览
 
-- 全屏动态渐变背景 + 竖条纹层次
+- 全屏背景视频（与 [Pigeon Nest](https://coocoo8192.wixsite.com/my-site-3) 官网同源）
 - 固定顶栏：产品下载 / 账号服务下拉菜单
 - 居中主标语「轻松做自己」与平台下载按钮
-- 底部平台切换（iOS / Android / macOS / Windows / Linux / HarmonyOS）
+- 底部平台切换对齐官网渠道：iOS、iOS/Mac TestFlight、APK、Google Play、Windows
 - 根据当前系统自动预选下载平台
-- 移动端平台展示扫码下载占位交互
 
 ## 技术栈
 
