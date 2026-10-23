@@ -42,9 +42,9 @@ export function Header({ onSelectPlatform }: HeaderProps) {
         className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6"
       >
         <a href="#" className="flex items-center gap-2.5">
-          <img src="/logo.png" alt="Pigeon Nest" className="h-9 w-9 rounded-md object-contain" />
+          <img src="/logo.png" alt="PigeonNest" className="h-9 w-9 rounded-md object-contain" />
           <span className="text-lg font-semibold tracking-tight text-[#1a1a2e]">
-            Pigeon Nest
+            PigeonNest
           </span>
         </a>
 

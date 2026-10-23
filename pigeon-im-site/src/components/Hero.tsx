@@ -15,7 +15,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
     <section className="relative flex min-h-full flex-col items-center justify-center px-4 pb-36 pt-20 text-center">
       <div className="animate-fade-up max-w-3xl">
         <p className="mb-3 text-sm font-medium tracking-[0.35em] text-white/70 uppercase">
-          Pigeon Nest
+          PigeonNest
         </p>
         <h1 className="mb-2 text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-6xl">
           轻松做自己
