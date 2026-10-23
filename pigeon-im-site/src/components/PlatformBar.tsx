@@ -9,7 +9,7 @@ interface PlatformBarProps {
 
 export function PlatformBar({ platforms, activeId, onSelect }: PlatformBarProps) {
   return (
-    <div className="relative z-40 flex shrink-0 justify-center px-4 py-3">
+    <div className="relative z-10 flex shrink-0 justify-center px-4 pb-3 pt-1">
       <div
         className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
         role="tablist"

@@ -1,8 +1,12 @@
 import type { PlatformId } from '../data/platforms'
 
-const className = 'h-6 w-6'
-
-export function PlatformIcon({ id }: { id: PlatformId }) {
+export function PlatformIcon({
+  id,
+  className = 'h-6 w-6',
+}: {
+  id: PlatformId
+  className?: string
+}) {
   switch (id) {
     case 'ios':
     case 'macos':
