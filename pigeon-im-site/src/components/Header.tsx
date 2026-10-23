@@ -48,16 +48,16 @@ export function Header({ onSelectPlatform }: HeaderProps) {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1.5 text-sm font-medium text-white/90 md:flex">
+        <ul className="hidden items-center gap-1 text-sm font-medium text-white/90 md:flex">
           <li>
-            <a href="#" className="glass-btn glass-btn-active rounded-xl px-3 py-1.5">
+            <a href="#" className="rounded-md px-3 py-2 text-white hover:bg-white/10">
               首页
             </a>
           </li>
           <li className="relative">
             <button
               type="button"
-              className={`glass-btn flex items-center gap-1 rounded-xl px-3 py-1.5 ${open === 'product' ? 'glass-btn-active' : ''}`}
+              className={`flex items-center gap-1 rounded-md px-3 py-2 hover:bg-white/10 ${open === 'product' ? 'bg-white/10' : ''}`}
               aria-expanded={open === 'product'}
               onClick={() => setOpen(open === 'product' ? null : 'product')}
             >
@@ -90,7 +90,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
           <li className="relative">
             <button
               type="button"
-              className={`glass-btn flex items-center gap-1 rounded-xl px-3 py-1.5 ${open === 'account' ? 'glass-btn-active' : ''}`}
+              className={`flex items-center gap-1 rounded-md px-3 py-2 hover:bg-white/10 ${open === 'account' ? 'bg-white/10' : ''}`}
               aria-expanded={open === 'account'}
               onClick={() => setOpen(open === 'account' ? null : 'account')}
             >
@@ -112,17 +112,17 @@ export function Header({ onSelectPlatform }: HeaderProps) {
             )}
           </li>
           <li>
-            <a href="#changelog" className="glass-btn rounded-xl px-3 py-1.5">
+            <a href="#changelog" className="rounded-md px-3 py-2 hover:bg-white/10">
               版本日志
             </a>
           </li>
           <li>
-            <a href="#stories" className="glass-btn rounded-xl px-3 py-1.5">
+            <a href="#stories" className="rounded-md px-3 py-2 hover:bg-white/10">
               Pigeon 故事
             </a>
           </li>
           <li>
-            <a href="#vip" className="glass-btn rounded-xl px-3 py-1.5">
+            <a href="#vip" className="rounded-md px-3 py-2 hover:bg-white/10">
               会员中心
             </a>
           </li>
@@ -130,7 +130,7 @@ export function Header({ onSelectPlatform }: HeaderProps) {
 
         <button
           type="button"
-          className="glass-btn rounded-xl p-2 md:hidden"
+          className="rounded-md p-2 text-white md:hidden"
           aria-label="菜单"
           onClick={() => setOpen(open ? null : 'product')}
         >
