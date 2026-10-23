@@ -21,15 +21,6 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes gradient-pan {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
 .gradient-bg {
   background: linear-gradient(
     105deg,
@@ -43,8 +34,7 @@ body {
     #f4d9c8 84%,
     #faf1e6 100%
   );
-  background-size: 200% 100%;
-  animation: gradient-pan 18s ease-in-out infinite alternate;
+  background-attachment: fixed;
 }
 
 .gradient-stripes::before {
