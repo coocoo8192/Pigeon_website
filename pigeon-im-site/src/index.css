@@ -21,35 +21,83 @@ body {
   overflow-x: hidden;
 }
 
+/* 首尾同色，便于单向循环时不出现「两套背景」切换感 */
 .gradient-bg {
   background: linear-gradient(
     105deg,
     #1a2c5b 0%,
-    #2d4a8e 12%,
-    #00c9b7 24%,
-    #5d3d8a 36%,
-    #9b88c7 48%,
-    #00e5cc 60%,
-    #7859b3 72%,
-    #f4d9c8 84%,
-    #faf1e6 100%
+    #2d4a8e 11%,
+    #00c9b7 22%,
+    #5d3d8a 33%,
+    #9b88c7 44%,
+    #00e5cc 55%,
+    #7859b3 66%,
+    #f4d9c8 77%,
+    #faf1e6 88%,
+    #1a2c5b 100%
   );
-  background-attachment: fixed;
+  background-size: 220% 100%;
+  animation: gradient-flow 28s linear infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .gradient-stripes::before {
   content: '';
   position: absolute;
   inset: 0;
+  width: 200%;
   background: repeating-linear-gradient(
     90deg,
     transparent 0px,
     transparent 48px,
-    rgba(255, 255, 255, 0.06) 48px,
-    rgba(255, 255, 255, 0.06) 52px
+    rgba(255, 255, 255, 0.07) 48px,
+    rgba(255, 255, 255, 0.07) 52px
   );
   pointer-events: none;
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  animation: stripe-flow 22s linear infinite;
+}
+
+@keyframes stripe-flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-52px);
+  }
+}
+
+.gradient-stripes::after {
+  content: '';
+  position: absolute;
+  inset: -20% -10%;
+  background: radial-gradient(
+    ellipse 55% 80% at 30% 40%,
+    rgba(255, 255, 255, 0.14),
+    transparent 55%
+  );
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  animation: light-drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes light-drift {
+  0% {
+    opacity: 0.55;
+    transform: translateX(-4%) translateY(0);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateX(6%) translateY(-2%);
+  }
 }
 
 @keyframes fade-up {
