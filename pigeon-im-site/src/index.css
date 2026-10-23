@@ -52,17 +52,41 @@ body {
 }
 
 .nav-link {
+  font-weight: 600;
+}
+
+.nav-on-light .nav-link {
   color: #12203a;
-  font-weight: 650;
 }
 
-.nav-link:hover {
+.nav-on-light .nav-link:hover {
   color: #0a1628;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(18, 32, 58, 0.08);
 }
 
-.nav-link-active {
+.nav-on-light .nav-link-active {
   color: #0b5fff;
+}
+
+.nav-on-light .nav-menu-btn {
+  color: #12203a;
+}
+
+.nav-on-dark .nav-link {
+  color: #fff;
+}
+
+.nav-on-dark .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.nav-on-dark .nav-link-active {
+  color: #8ec5ff;
+}
+
+.nav-on-dark .nav-menu-btn {
+  color: #fff;
 }
 
 .glass-btn {
