@@ -12,15 +12,15 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
   const canShowQr = QR_PLATFORMS.has(platform.id)
 
   return (
-    <section className="relative flex min-h-full flex-col items-center justify-center px-4 pb-36 pt-20 text-center">
+    <section className="relative flex min-h-0 flex-1 flex-col items-center justify-center px-4 py-4 text-center sm:py-6">
       <div className="animate-fade-up max-w-3xl">
-        <p className="mb-3 text-sm font-medium tracking-[0.35em] text-white/70 uppercase">
+        <p className="mb-2 text-xs font-medium tracking-[0.35em] text-white/70 uppercase sm:mb-3 sm:text-sm">
           PigeonNest
         </p>
-        <h1 className="mb-2 text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-6xl">
+        <h1 className="mb-2 text-3xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-6xl">
           轻松做自己
         </h1>
-        <p className="mb-10 text-lg text-white/85 sm:text-xl">
+        <p className="mb-6 text-base text-white/85 sm:mb-8 sm:text-xl">
           Encrypted chat, Digital wallet, in one app
         </p>
 
@@ -76,7 +76,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
         {platform.updateNotes && platform.updateNotes.length > 0 && !showQr && (
           <div
             id="changelog"
-            className="mx-auto mt-10 max-w-md px-5 py-1 text-left text-sm text-white/90"
+            className="mx-auto mt-6 max-w-md px-5 py-1 text-left text-sm text-white/90"
           >
             <p className="mb-2 font-medium text-white">本次更新</p>
             <ul className="list-inside list-disc space-y-1 text-white/85">

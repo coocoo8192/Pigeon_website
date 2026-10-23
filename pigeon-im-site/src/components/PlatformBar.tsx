@@ -9,7 +9,7 @@ interface PlatformBarProps {
 
 export function PlatformBar({ platforms, activeId, onSelect }: PlatformBarProps) {
   return (
-    <div className="fixed bottom-20 left-0 right-0 z-40 flex justify-center px-4">
+    <div className="relative z-40 flex shrink-0 justify-center px-4 py-3">
       <div
         className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
         role="tablist"
@@ -23,15 +23,15 @@ export function PlatformBar({ platforms, activeId, onSelect }: PlatformBarProps)
               type="button"
               role="tab"
               aria-selected={active}
-              className={`glass-btn flex flex-col items-center gap-1 rounded-xl px-2.5 py-1.5 sm:px-3 ${
+              className={`glass-btn flex min-w-[4.5rem] flex-col items-center gap-0.5 rounded-xl px-2.5 py-1.5 sm:min-w-[5.25rem] sm:px-3 ${
                 active ? 'glass-btn-active' : 'text-white/80'
               }`}
               onClick={() => onSelect(p.id)}
             >
-              <span className="flex h-8 w-8 items-center justify-center">
+              <span className="flex h-7 w-7 items-center justify-center">
                 <PlatformIcon id={p.id} />
               </span>
-              <span className="text-xs font-medium">
+              <span className="text-[11px] font-medium sm:text-xs">
                 {p.shortLabel}
                 {p.beta && <span className="ml-0.5 text-[10px] text-white/80">β</span>}
               </span>

@@ -11,16 +11,20 @@ export function Header() {
   }, [location.pathname, location.hash])
 
   return (
-    <header className="fixed top-0 z-50 w-full px-3 pt-3 sm:px-4">
-      <nav className="glass mx-auto flex h-14 max-w-6xl items-center justify-between rounded-2xl px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2.5">
-          <img src="/logo.png" alt="PigeonNest" className="h-9 w-9 rounded-md object-contain" />
-          <span className="text-lg font-semibold tracking-tight text-white">
+    <header className="relative z-50 w-full px-3 pt-3 sm:px-5">
+      <nav className="glass mx-auto flex h-[68px] max-w-6xl items-center justify-between rounded-2xl px-4 sm:px-6">
+        <Link to="/" className="flex shrink-0 items-center gap-3">
+          <img
+            src="/logo.png"
+            alt="PigeonNest"
+            className="h-12 w-12 rounded-xl object-contain sm:h-14 sm:w-14"
+          />
+          <span className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
             PigeonNest
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-0.5 text-sm font-medium text-white/90 lg:flex">
+        <ul className="hidden items-center gap-0.5 text-[13px] font-medium text-white/90 xl:flex">
           {navItems.map((item) => (
             <li key={item.label}>
               <NavItem to={item.to} end={'end' in item ? item.end : false}>
@@ -32,7 +36,7 @@ export function Header() {
 
         <button
           type="button"
-          className="rounded-md p-2 text-white lg:hidden"
+          className="rounded-md p-2 text-white xl:hidden"
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -48,7 +52,7 @@ export function Header() {
       </nav>
 
       {open && (
-        <div className="glass mx-auto mt-2 max-w-6xl rounded-2xl p-2 lg:hidden">
+        <div className="glass absolute left-3 right-3 top-[80px] z-50 mx-auto max-w-6xl rounded-2xl p-2 sm:left-5 sm:right-5 xl:hidden">
           <ul className="flex flex-col text-sm font-medium text-white/90">
             {navItems.map((item) => (
               <li key={item.label}>

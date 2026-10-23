@@ -21,7 +21,7 @@ export function HomePage() {
   )
 
   return (
-    <>
+    <div className="flex min-h-0 flex-1 flex-col">
       <Hero
         platform={platform}
         showQr={showQr}
@@ -35,6 +35,6 @@ export function HomePage() {
           setShowQr(false)
         }}
       />
-    </>
+    </div>
   )
 }

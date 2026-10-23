@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
 
-export function Footer({ pinned = false }: { pinned?: boolean }) {
+export function Footer() {
   return (
-    <footer
-      className={`${pinned ? 'fixed bottom-0 left-0 right-0 z-30' : ''} px-4 py-4 text-center text-xs text-white/75`}
-    >
-      <div className="mb-2 flex flex-wrap items-center justify-center gap-4">
+    <footer className="relative z-30 shrink-0 px-4 pb-4 pt-2 text-center text-[11px] leading-relaxed text-white/70 sm:text-xs">
+      <div className="mb-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
         <Link to="/privacy" className="hover:text-white hover:underline">
           Privacy Policy
         </Link>
@@ -18,7 +16,9 @@ export function Footer({ pinned = false }: { pinned?: boolean }) {
           Contact
         </Link>
       </div>
-      <p>C-92 HOR AL ANZ BUILDING 307 - HOR AL ANZ ST - PO Box 88878 - DUBAI - UAE</p>
+      <p className="mx-auto max-w-3xl px-2">
+        C-92 HOR AL ANZ BUILDING 307 - HOR AL ANZ ST - PO Box 88878 - DUBAI - UAE
+      </p>
       <p className="mt-0.5">
         <a href="mailto:info@pigeonnit.com" className="hover:text-white hover:underline">
           info@pigeonnit.com
@@ -27,8 +27,9 @@ export function Footer({ pinned = false }: { pinned?: boolean }) {
         <a href="tel:+971586193145" className="hover:text-white hover:underline">
           +971 58 619 3145
         </a>
+        <span className="mx-2 text-white/30">|</span>
+        <span className="text-white/50">© {new Date().getFullYear()} PigeonNest</span>
       </p>
-      <p className="mt-1 text-white/50">© {new Date().getFullYear()} PigeonNest</p>
     </footer>
   )
 }
