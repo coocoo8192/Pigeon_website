@@ -24,7 +24,7 @@ export function Header() {
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-0.5 text-[13px] font-medium text-white/90 xl:flex">
+        <ul className="hidden items-center gap-0.5 text-[13px] xl:flex">
           {navItems.map((item) => (
             <li key={item.label}>
               <NavItem to={item.to} end={'end' in item ? item.end : false}>
@@ -53,7 +53,7 @@ export function Header() {
 
       {open && (
         <div className="glass-nav absolute left-3 right-3 top-[80px] z-50 mx-auto max-w-6xl rounded-2xl p-2 sm:left-5 sm:right-5 xl:hidden">
-          <ul className="flex flex-col text-sm font-medium text-white/90">
+          <ul className="flex flex-col text-sm">
             {navItems.map((item) => (
               <li key={item.label}>
                 <NavItem to={item.to} end={'end' in item ? item.end : false} block>
@@ -80,8 +80,8 @@ function NavItem({
   children: React.ReactNode
 }) {
   const className = ({ isActive }: { isActive: boolean }) =>
-    `${block ? 'block' : 'inline-block'} rounded-md px-2.5 py-2 ${
-      isActive ? 'text-white' : 'text-white/80 hover:bg-white/10 hover:text-white'
+    `nav-link ${block ? 'block' : 'inline-block'} rounded-md px-2.5 py-2 ${
+      isActive ? 'nav-link-active' : ''
     }`
 
   if (to.includes('#')) {
