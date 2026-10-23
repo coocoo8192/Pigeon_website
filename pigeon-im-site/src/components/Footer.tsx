@@ -2,10 +2,12 @@ export function Footer() {
   const year = new Date().getFullYear()
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-30 px-4 py-3 text-center text-xs text-white/75">
-      <div className="mb-2 flex flex-wrap items-center justify-center gap-2">
-        <a href="#" className="glass-btn rounded-xl px-3 py-1">隐私查询</a>
-        <a href="#" className="glass-btn rounded-xl px-3 py-1">反馈问题</a>
-        <a href="#" className="glass-btn rounded-xl px-3 py-1">客服中心</a>
+      <div className="mb-2 flex flex-wrap items-center justify-center gap-4">
+        <a href="#" className="hover:text-white hover:underline">隐私查询</a>
+        <span className="text-white/30">|</span>
+        <a href="#" className="hover:text-white hover:underline">反馈问题</a>
+        <span className="text-white/30">|</span>
+        <a href="#" className="hover:text-white hover:underline">客服中心</a>
       </div>
       <p>
         Copyright © 1998 – {year} Pigeon IM Demo. All Rights Reserved.
