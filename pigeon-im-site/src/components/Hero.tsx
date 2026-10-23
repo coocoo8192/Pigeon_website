@@ -77,9 +77,9 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
           ) : (
             platform.updateNotes &&
             platform.updateNotes.length > 0 && (
-              <div id="changelog" className="w-full px-5 py-1 text-left text-sm text-white/90">
-                <p className="mb-2 font-medium text-white">What’s new</p>
-                <ul className="list-inside list-disc space-y-1 text-white/85">
+              <div id="changelog" className="w-full px-5 py-1 text-center text-sm text-white/90">
+                <p className="mb-2 font-medium text-white">What's new</p>
+                <ul className="space-y-1 text-white/85">
                   {platform.updateNotes.map((note) => (
                     <li key={note}>{note}</li>
                   ))}
