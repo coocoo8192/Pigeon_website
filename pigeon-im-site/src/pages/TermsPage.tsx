@@ -3,7 +3,13 @@ import { PageShell } from '../components/PageShell'
 
 export function TermsPage() {
   return (
-    <PageShell title="Terms of Service">
+    <PageShell
+      title="Terms of Service"
+      banner={{
+        src: '/banners/terms.jpg',
+        alt: 'Signing a service agreement',
+      }}
+    >
       <h2 className="text-xl font-semibold text-white">These terms</h2>
       <p>
         These terms of use govern your use and access to our services, including our website(s),

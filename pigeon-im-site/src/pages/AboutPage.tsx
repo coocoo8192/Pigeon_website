@@ -12,7 +12,13 @@ export function AboutPage() {
   }, [hash])
 
   return (
-    <PageShell title="About Us">
+    <PageShell
+      title="About Us"
+      banner={{
+        src: '/banners/about.jpg',
+        alt: 'Team collaborating together',
+      }}
+    >
       <h2 className="text-xl font-semibold text-white">Our Mission</h2>
       <p>
         At PigeonNest, we are committed to revolutionizing digital communication by empowering
@@ -68,7 +74,10 @@ export function AboutPage() {
       <div id="contact" className="scroll-mt-24 space-y-3 pt-4">
         <h2 className="text-xl font-semibold text-white">Contact</h2>
         <p>Pigeon Nest Information Technology LLC SOC</p>
-        <p>C-92 HOR AL ANZ BUILDING 307 - HOR AL ANZ ST - PO Box 88878 - DUBAI - UAE</p>
+        <p>
+          C-92 HOR AL ANZ BUILDING 307 - HOR AL ANZ ST - PO Box 88878 - DUBAI - UNITED ARAB
+          EMIRATES
+        </p>
         <p>
           Email:{' '}
           <a className="underline hover:text-white" href="mailto:info@pigeonnit.com">

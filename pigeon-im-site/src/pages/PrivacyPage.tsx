@@ -3,7 +3,13 @@ import { PageShell } from '../components/PageShell'
 
 export function PrivacyPage() {
   return (
-    <PageShell title="Privacy Policy">
+    <PageShell
+      title="Privacy Policy"
+      banner={{
+        src: '/banners/privacy.jpg',
+        alt: 'Abstract digital security network',
+      }}
+    >
       <h2 className="text-xl font-semibold text-white">1. Introduction</h2>
       <p>
         This Privacy Policy sets out how we, Pigeon Nest Information Technology LLC SOC, use and

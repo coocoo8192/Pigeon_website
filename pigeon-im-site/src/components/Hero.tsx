@@ -13,9 +13,9 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
   const canShowQr = QR_PLATFORMS.has(platform.id)
 
   return (
-    <section className="relative flex min-h-0 flex-1 flex-col items-center overflow-y-auto px-4 py-4 text-center sm:py-6">
-      <div className="flex min-h-0 w-full flex-1 flex-col items-center">
-        <div className={`min-h-0 ${canShowQr && showQr ? 'h-3 shrink-0 sm:h-4' : 'flex-1'}`} />
+    <section className="relative flex flex-col items-center px-4 pt-14 pb-3 text-center sm:pt-20 sm:pb-4">
+      <div className="flex w-full flex-col items-center">
+        <div className={canShowQr && showQr ? 'h-2' : 'h-8 sm:h-14'} />
 
         <div className="w-full max-w-3xl shrink-0">
           <h1 className="mb-2 text-3xl font-bold tracking-tight text-white drop-shadow-sm sm:text-4xl md:text-5xl">
@@ -48,8 +48,8 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
         </div>
 
         <div
-          className={`relative mt-4 w-full max-w-md shrink-0 sm:mt-5 ${
-            canShowQr && showQr ? '' : 'h-[7.5rem]'
+          className={`relative mt-3 w-full max-w-md shrink-0 sm:mt-4 ${
+            canShowQr && showQr ? '' : 'h-[6.25rem]'
           }`}
         >
           {canShowQr && showQr ? (
@@ -95,7 +95,7 @@ export function Hero({ platform, showQr, onToggleQr }: HeroProps) {
           )}
         </div>
 
-        <div className={`min-h-0 ${canShowQr && showQr ? 'h-3 shrink-0 sm:h-4' : 'flex-1'}`} />
+        <div className={canShowQr && showQr ? 'h-1' : 'h-1 sm:h-2'} />
       </div>
     </section>
   )

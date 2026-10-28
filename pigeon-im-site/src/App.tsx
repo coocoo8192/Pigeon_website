@@ -29,7 +29,7 @@ function App() {
             element={
               <Suspense
                 fallback={
-                  <section className="mx-auto w-full max-w-3xl px-5 pb-16 pt-10 text-white">
+                  <section className="relative z-10 mx-auto w-full max-w-4xl px-5 pb-12 pt-8 text-white sm:px-8 sm:pb-16 sm:pt-10 lg:max-w-5xl">
                     <p className="text-white/70">Loading delete account…</p>
                   </section>
                 }

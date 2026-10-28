@@ -6,18 +6,16 @@ import { VideoBackground } from './VideoBackground'
 
 export function Layout() {
   const { pathname, hash } = useLocation()
-  const isHome = pathname === '/'
-
   useEffect(() => {
     if (!hash) window.scrollTo(0, 0)
   }, [pathname, hash])
 
   return (
-    <div className={`relative flex min-h-svh flex-col ${isHome ? 'h-svh overflow-hidden' : ''}`}>
+    <div className="relative flex min-h-svh flex-col">
       <VideoBackground />
-      <div className="relative flex min-h-0 flex-1 flex-col">
+      <div className="relative flex flex-1 flex-col">
         <Header />
-        <main className="flex min-h-0 flex-1 flex-col">
+        <main className="flex flex-1 flex-col">
           <Outlet />
         </main>
         <Footer />

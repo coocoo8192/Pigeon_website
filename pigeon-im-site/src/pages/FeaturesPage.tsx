@@ -1,38 +1,32 @@
 import { PageShell } from '../components/PageShell'
-
-const features = [
-  {
-    title: 'Transfer',
-    body: 'Transfer anytime, anywhere with ease. A digital currency wallet lets you securely store, manage, and trade digital assets, and send coins directly to friends in the chat window.',
-  },
-  {
-    title: 'Securely transmit messages',
-    body: 'Every message you send and receive is protected by end-to-end encryption, so historical records stay complete and secure.',
-  },
-  {
-    title: 'Built for Privacy',
-    body: 'Your digital wallet is linked to your IM account. Create an account through a wallet private key or mnemonic words — no phone number or email required — and communicate privately with friends.',
-  },
-  {
-    title: 'Red Envelope',
-    body: 'Let surprises arrive anytime, anywhere. Sending digital currency in a group chat window supports marketing and group play.',
-  },
-]
+import { features, featuresIntro } from '../data/features'
 
 export function FeaturesPage() {
   return (
-    <PageShell title="Our Features">
-      <p>
-        Encrypted chat and a digital wallet in one app. Here, privacy and payment meet.
+    <PageShell title="Our Features" wide>
+      <p className="mx-auto max-w-3xl text-center text-base leading-7 text-white/90 sm:text-lg">
+        {featuresIntro}
       </p>
-      <ul className="space-y-5">
+
+      <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-12">
         {features.map((item) => (
-          <li key={item.title}>
-            <h2 className="mb-1 text-lg font-semibold text-white">{item.title}</h2>
-            <p>{item.body}</p>
-          </li>
+          <article key={item.id} id={item.id} className="flex flex-col">
+            <div className="relative mb-4 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <img
+                src={item.image.src}
+                alt={item.image.alt}
+                className="h-full w-full object-cover opacity-90"
+                loading="lazy"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/5" />
+            </div>
+            <h2 className="mb-2 text-lg font-semibold tracking-tight text-white sm:text-xl">
+              {item.title}
+            </h2>
+            <p className="text-sm leading-6 text-white/80 sm:leading-7">{item.body}</p>
+          </article>
         ))}
-      </ul>
+      </div>
     </PageShell>
   )
 }
